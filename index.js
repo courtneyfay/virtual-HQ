@@ -1,5 +1,4 @@
-// Import the library
 const server = require("server");
+const { render } = server.reply;
 
-// Launch the server to always answer "Hello world"
-server((ctx) => "Hello world!");
+server((ctx) => render("index.html"));

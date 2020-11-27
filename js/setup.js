@@ -1,23 +1,23 @@
-import {
-  BoxGeometry,
-  Mesh,
-  MeshBasicMaterial,
-  PerspectiveCamera,
-  Scene,
-  WebGLRenderer,
-} from "https://unpkg.com/three@0.123.0/build/three.module.js";
+// import {
+//   BoxGeometry,
+//   Mesh,
+//   MeshBasicMaterial,
+//   PerspectiveCamera,
+//   Scene,
+//   WebGLRenderer,
+// } from "https://unpkg.com/three@0.123.0/build/three.module.js";
 
 console.log("hitting setup.js");
 
 // set up the scene
-const scene = new Scene();
+const scene = new THREE.Scene();
 
 // set up the camera
 // 1st parameter: field of view (extent of the scene on display in any moment), in degrees
 // 2nd parameter: aspect ratio (usu want width/height to avoid a squished ratio)
 // 3rd parameter: near clipping plane (won't render anything closer than near, related to performance)
 // 4th parameter: far clipping plane (won't render anything farther than far, related to performance)
-const camera = new PerspectiveCamera(
+const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
   0.1,
@@ -25,7 +25,7 @@ const camera = new PerspectiveCamera(
 );
 
 // set up the renderer
-const renderer = new WebGLRenderer();
+const renderer = new THREE.WebGLRenderer();
 // sets the size at which the app renders
 renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -33,17 +33,17 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // box geometry allows for a cube object
-const geometry = new BoxGeometry();
+const geometry = new THREE.BoxGeometry();
 
 // material that the shape will be made out of
 // uses hex colors
-const material = new MeshBasicMaterial({
+const material = new THREE.MeshBasicMaterial({
   color: 0x00ff00, //green
 });
 
 // a mesh is an object that takes a geometry, and applies a material to it
 // which we can then insert into our scene and move freely around
-const cube = new Mesh(geometry, material);
+const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 // by default, when scene.add is called, the object is added to the coordinates (0,0,0)
