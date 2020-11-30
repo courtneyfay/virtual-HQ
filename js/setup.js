@@ -50,8 +50,8 @@ camera.position.z = 5;
 function animate() {
   requestAnimationFrame(animate);
   // can animate the cubes to rotate every frame (~60 times per second)
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
+  // cube.rotation.x += 0.01;
+  // cube.rotation.y += 0.01;
 
   renderer.render(scene, camera);
 }
