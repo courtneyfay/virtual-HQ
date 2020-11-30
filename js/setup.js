@@ -1,14 +1,3 @@
-// import {
-//   BoxGeometry,
-//   Mesh,
-//   MeshBasicMaterial,
-//   PerspectiveCamera,
-//   Scene,
-//   WebGLRenderer,
-// } from "https://unpkg.com/three@0.123.0/build/three.module.js";
-
-console.log("hitting setup.js");
-
 // set up the scene
 const scene = new THREE.Scene();
 
